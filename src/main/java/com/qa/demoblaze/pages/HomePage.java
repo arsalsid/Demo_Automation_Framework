@@ -15,6 +15,7 @@ public class HomePage {
 
     private String clickOnSearchProductLocator = "//a[text()= 'Samsung galaxy s6']";
     private String searchProductPageHeaderLocator = "//h2[text()= 'Samsung galaxy s6']";
+    private String loginLinkLocator = "login2";
 
 
     //2. page Constructor:
@@ -40,5 +41,10 @@ public class HomePage {
         String header = page.textContent(searchProductPageHeaderLocator);
         System.out.println("search header: " + header);
         return header;
+    }
+
+    public LoginPage navigateToLoginPage() {
+        CommonMethods.clickOnElement(loginLinkLocator);
+        return new LoginPage(page);
     }
 }
